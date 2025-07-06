@@ -30,13 +30,12 @@ export default function Index() {
       {/* Header/Navigation */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 gradient-primary rounded-lg flex items-center justify-center">
-              <Zap className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">
-              CipherBridge
-            </span>
+          <div className="flex items-center space-x-3">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F58568866d7a34cc4ad219fad1e3fa393%2F4e597770b24444ffa5efbbeb32e8ee28?format=webp&width=800"
+              alt="CipherBridge Logo"
+              className="h-10 w-auto"
+            />
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a
@@ -609,11 +608,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="h-8 w-8 gradient-primary rounded-lg flex items-center justify-center">
-                  <Zap className="h-5 w-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">CipherBridge</span>
+              <div className="flex items-center space-x-3 mb-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F58568866d7a34cc4ad219fad1e3fa393%2F4e597770b24444ffa5efbbeb32e8ee28?format=webp&width=800"
+                  alt="CipherBridge Logo"
+                  className="h-8 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400 mb-6">
                 Bridging the gap between business needs and innovative

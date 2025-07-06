@@ -1,4 +1,5 @@
 import { supabase, isSupabaseConfigured, type QuoteRequest } from "./supabase";
+import { EmailNotificationService } from "./email-service";
 
 export interface SubmitQuoteData {
   fullName: string;
@@ -67,6 +68,13 @@ export class QuoteService {
           error:
             "Failed to submit quote request. Please try again or contact us directly.",
         };
+      }
+
+      // Send email notification (don't fail if this fails)
+      const emailResult =
+        await EmailNotificationService.sendQuoteNotification(data);
+      if (!emailResult.success) {
+        console.warn("Email notification failed:", emailResult.error);
       }
 
       return { success: true };

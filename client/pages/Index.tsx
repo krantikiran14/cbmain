@@ -109,15 +109,6 @@ export default function Index() {
     });
   };
 
-  const handleSignIn = () => {
-    // For now, show a toast - you can implement actual auth later
-    toast({
-      title: "Sign In",
-      description:
-        "Sign in functionality will be available soon. Contact us for account setup.",
-    });
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
@@ -157,13 +148,6 @@ export default function Index() {
             </a>
           </nav>
           <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              className="hidden md:inline-flex"
-              onClick={handleSignIn}
-            >
-              Sign In
-            </Button>
             <Button
               className="gradient-primary text-white border-0 hover:opacity-90"
               onClick={scrollToQuoteForm}

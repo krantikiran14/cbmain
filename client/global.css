@@ -17,32 +17,32 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 236 72% 79%;
+    --primary: 193 88% 68%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 193 20% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 193 20% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 244 58% 91%;
-    --accent-foreground: 236 72% 28%;
+    --accent: 193 40% 92%;
+    --accent-foreground: 193 88% 28%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 236 72% 79%;
+    --border: 193 25% 91%;
+    --input: 193 25% 91%;
+    --ring: 193 88% 68%;
 
     --radius: 0.5rem;
 
-    /* SaaS specific colors */
-    --primary-gradient-from: 236 72% 79%;
-    --primary-gradient-to: 244 58% 91%;
-    --hero-background: 248 100% 99%;
-    --feature-background: 210 40% 98%;
+    /* CipherBridge specific colors - matching logo */
+    --primary-gradient-from: 193 88% 68%;
+    --primary-gradient-to: 193 70% 82%;
+    --hero-background: 193 100% 99%;
+    --feature-background: 193 20% 98%;
   }
 
   .dark {
@@ -55,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 236 72% 79%;
+    --primary: 193 88% 68%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -72,11 +72,11 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 193 88% 68%;
 
-    /* Dark mode SaaS colors */
-    --primary-gradient-from: 236 72% 79%;
-    --primary-gradient-to: 244 58% 91%;
+    /* Dark mode CipherBridge colors */
+    --primary-gradient-from: 193 88% 68%;
+    --primary-gradient-to: 193 70% 82%;
     --hero-background: 222.2 84% 4.9%;
     --feature-background: 217.2 32.6% 17.5%;
   }

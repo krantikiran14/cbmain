@@ -52,16 +52,16 @@ export default function Index() {
               How it Works
             </a>
             <a
-              href="#pricing"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Pricing
-            </a>
-            <a
               href="#about"
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               About
+            </a>
+            <a
+              href="#contact"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Get Quote
             </a>
           </nav>
           <div className="flex items-center space-x-4">
@@ -69,7 +69,7 @@ export default function Index() {
               Sign In
             </Button>
             <Button className="gradient-primary text-white border-0 hover:opacity-90">
-              Get Started Free
+              Get Quote
             </Button>
           </div>
         </div>
@@ -100,27 +100,13 @@ export default function Index() {
                 size="lg"
                 className="gradient-primary text-white border-0 hover:opacity-90 px-8 py-3"
               >
-                Get Started Free
+                Get Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="px-8 py-3">
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
               </Button>
-            </div>
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>No credit card required</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>14-day free trial</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>Cancel anytime</span>
-              </div>
             </div>
           </div>
         </div>
@@ -377,123 +363,119 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
+      {/* Get Quote Section */}
+      <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Simple, transparent pricing
+              Get a Custom Quote for Your Project
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose the plan that fits your needs. All plans include our core
-              features and 24/7 support.
+              Tell us about your requirements and our team will call you to
+              discuss your project and provide a detailed proposal.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="border hover:shadow-lg transition-shadow">
+          <div className="max-w-2xl mx-auto">
+            <Card className="border-0 bg-gray-50">
               <CardHeader className="text-center">
-                <CardTitle className="text-xl">Starter</CardTitle>
-                <CardDescription>Perfect for small teams</CardDescription>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold">$29</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
+                <CardTitle className="text-2xl">Request Your Quote</CardTitle>
+                <CardDescription>
+                  Fill out the form below and our team will contact you within
+                  24 hours
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Up to 5 users</span>
+              <CardContent className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <Input placeholder="Your full name" required />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <Input placeholder="Your company name" />
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>100 automation runs/month</span>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <Input placeholder="your@email.com" type="email" required />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <Input
+                      placeholder="+1 (555) 123-4567"
+                      type="tel"
+                      required
+                    />
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Basic integrations</span>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Type *
+                  </label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="">Select your project type</option>
+                    <option value="crm">Custom CRM Solution</option>
+                    <option value="erp">Enterprise ERP System</option>
+                    <option value="database">Database Management</option>
+                    <option value="website">Website Development</option>
+                    <option value="mobile">Mobile Application</option>
+                    <option value="multiple">Multiple Services</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Email support</span>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Budget Range
+                  </label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="">Select budget range</option>
+                    <option value="5k-15k">$5,000 - $15,000</option>
+                    <option value="15k-50k">$15,000 - $50,000</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="100k+">$100,000+</option>
+                    <option value="discuss">Prefer to discuss</option>
+                  </select>
                 </div>
-                <Button className="w-full mt-6" variant="outline">
-                  Start Free Trial
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Timeline
+                  </label>
+                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="">Select timeline</option>
+                    <option value="asap">ASAP (Rush project)</option>
+                    <option value="1-3months">1-3 months</option>
+                    <option value="3-6months">3-6 months</option>
+                    <option value="6months+">6+ months</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Requirements *
+                  </label>
+                  <Textarea
+                    placeholder="Please describe your project requirements, features needed, current challenges, and any specific goals you want to achieve..."
+                    className="min-h-32"
+                    required
+                  />
+                </div>
+                <Button className="w-full gradient-primary text-white border-0 hover:opacity-90 py-4 text-lg">
+                  Get My Custom Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200 hover:shadow-lg transition-shadow relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 gradient-primary text-white border-0">
-                Most Popular
-              </Badge>
-              <CardHeader className="text-center">
-                <CardTitle className="text-xl">Professional</CardTitle>
-                <CardDescription>Best for growing businesses</CardDescription>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold">$99</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Up to 25 users</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Unlimited automation runs</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>All integrations</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Priority support</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Advanced analytics</span>
-                </div>
-                <Button className="w-full mt-6 gradient-primary text-white border-0 hover:opacity-90">
-                  Start Free Trial
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <CardTitle className="text-xl">Enterprise</CardTitle>
-                <CardDescription>For large organizations</CardDescription>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold">$299</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Unlimited users</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>White-label options</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Custom integrations</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Dedicated success manager</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>SLA guarantee</span>
-                </div>
-                <Button className="w-full mt-6" variant="outline">
-                  Contact Sales
-                </Button>
+                <p className="text-sm text-gray-600 text-center">
+                  Our team will review your requirements and call you within 24
+                  hours • Free consultation • No commitment required
+                </p>
               </CardContent>
             </Card>
           </div>

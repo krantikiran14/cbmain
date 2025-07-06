@@ -34,7 +34,9 @@ export default function Index() {
             <div className="h-8 w-8 gradient-primary rounded-lg flex items-center justify-center">
               <Zap className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">FlowSync</span>
+            <span className="text-xl font-bold text-gray-900">
+              CipherBridge
+            </span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a
@@ -78,19 +80,20 @@ export default function Index() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 gradient-primary text-white border-0">
-              ✨ Transform Your Workflow Today
+              ✨ Transform Your Business Today
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Streamline Your Business
+              Custom Business
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 {" "}
-                Operations
+                Solutions
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              FlowSync revolutionizes how teams collaborate, automate tasks, and
-              drive results. Join thousands of companies already saving 40+
-              hours per week.
+              CipherBridge delivers custom CRM, ERP, and Database Management
+              systems, plus cutting-edge Website and Mobile Application
+              development. Empowering businesses with tailored digital
+              solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button
@@ -128,23 +131,76 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Everything you need to scale
+              Comprehensive Digital Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Powerful features designed to grow with your business and
-              streamline every aspect of your operations.
+              From custom business systems to mobile applications, we deliver
+              complete digital transformation tailored to your unique needs.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
               <CardHeader>
                 <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Custom CRM Solutions</CardTitle>
+                <CardDescription>
+                  Tailored Customer Relationship Management systems that fit
+                  your business processes and enhance customer interactions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
+              <CardHeader>
+                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
+                  <Building2 className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Enterprise ERP Systems</CardTitle>
+                <CardDescription>
+                  Comprehensive Enterprise Resource Planning solutions to
+                  streamline operations and boost efficiency across departments.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
+              <CardHeader>
+                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
+                  <BarChart3 className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Database Management</CardTitle>
+                <CardDescription>
+                  Advanced database design, optimization, and management
+                  services ensuring your data is secure, accessible, and
+                  performing optimally.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
+              <CardHeader>
+                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Lightning Fast Automation</CardTitle>
+                <CardTitle>Web Development</CardTitle>
                 <CardDescription>
-                  Automate repetitive tasks and workflows in minutes, not hours.
-                  Our intelligent system learns your patterns.
+                  Modern, responsive websites and web applications built with
+                  cutting-edge technologies and optimized for performance.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
+              <CardHeader>
+                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
+                  <Phone className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle>Mobile Applications</CardTitle>
+                <CardDescription>
+                  Native and cross-platform mobile apps for iOS and Android that
+                  deliver exceptional user experiences.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -156,60 +212,8 @@ export default function Index() {
                 </div>
                 <CardTitle>Enterprise Security</CardTitle>
                 <CardDescription>
-                  Bank-level encryption, SSO integration, and compliance with
-                  SOC 2, GDPR, and HIPAA standards.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
-              <CardHeader>
-                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <BarChart3 className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Advanced Analytics</CardTitle>
-                <CardDescription>
-                  Real-time insights and customizable dashboards help you make
-                  data-driven decisions instantly.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
-              <CardHeader>
-                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Team Collaboration</CardTitle>
-                <CardDescription>
-                  Seamless collaboration tools that keep your team aligned and
-                  productive, wherever they work.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
-              <CardHeader>
-                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <Building2 className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>Seamless Integrations</CardTitle>
-                <CardDescription>
-                  Connect with 200+ popular tools including Slack, Salesforce,
-                  HubSpot, and Google Workspace.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border-0 bg-white">
-              <CardHeader>
-                <div className="h-12 w-12 gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <Star className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle>24/7 Support</CardTitle>
-                <CardDescription>
-                  World-class support team available around the clock to ensure
-                  your success every step of the way.
+                  Bank-level encryption, secure authentication, and compliance
+                  with industry standards to protect your business data.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -222,11 +226,11 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Get started in 3 simple steps
+              Our proven development process
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From setup to success in minutes. Our streamlined onboarding gets
-              you productive immediately.
+              From concept to deployment, we follow a structured approach that
+              ensures your custom solution meets every requirement.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -235,11 +239,11 @@ export default function Index() {
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Connect Your Tools
+                Discovery & Planning
               </h3>
               <p className="text-gray-600">
-                Integrate your existing apps and data sources in just a few
-                clicks. Our smart detection makes setup effortless.
+                We analyze your business requirements, existing systems, and
+                goals to create a comprehensive development strategy.
               </p>
             </div>
             <div className="text-center">
@@ -247,11 +251,11 @@ export default function Index() {
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Customize Workflows
+                Custom Development
               </h3>
               <p className="text-gray-600">
-                Design automation workflows using our visual builder. No coding
-                required – just drag, drop, and configure.
+                Our expert team builds your solution using modern technologies,
+                with regular updates and feedback throughout the process.
               </p>
             </div>
             <div className="text-center">
@@ -259,11 +263,11 @@ export default function Index() {
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Watch It Work
+                Deploy & Support
               </h3>
               <p className="text-gray-600">
-                Sit back and watch as FlowSync automates your processes, saves
-                time, and delivers consistent results.
+                We handle deployment, training, and provide ongoing support to
+                ensure your solution continues to deliver results.
               </p>
             </div>
           </div>
@@ -275,11 +279,11 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Loved by teams worldwide
+              Trusted by businesses worldwide
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join thousands of companies that have transformed their operations
-              with FlowSync.
+              See how companies have transformed their operations with
+              CipherBridge's custom solutions.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -294,9 +298,9 @@ export default function Index() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
-                  "FlowSync reduced our manual work by 75%. What used to take
-                  our team 8 hours now takes 2. It's been absolutely
-                  transformational."
+                  "CipherBridge's custom CRM solution transformed our sales
+                  process. Our team productivity increased by 60% and customer
+                  satisfaction has never been higher."
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-semibold">
@@ -305,7 +309,7 @@ export default function Index() {
                   <div className="ml-3">
                     <p className="font-semibold text-gray-900">Sarah Johnson</p>
                     <p className="text-sm text-gray-600">
-                      VP Operations, TechCorp
+                      Sales Director, TechSolutions
                     </p>
                   </div>
                 </div>
@@ -323,8 +327,9 @@ export default function Index() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
-                  "The ROI was immediate. We saved $50K in the first quarter
-                  alone. FlowSync pays for itself in the first month."
+                  "Their ERP system streamlined our entire operation. What used
+                  to take days now takes hours. The ROI was evident within the
+                  first quarter."
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-semibold">
@@ -334,7 +339,9 @@ export default function Index() {
                     <p className="font-semibold text-gray-900">
                       Michael Rodriguez
                     </p>
-                    <p className="text-sm text-gray-600">CEO, GrowthLabs</p>
+                    <p className="text-sm text-gray-600">
+                      CEO, ManufacturingCorp
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -351,9 +358,9 @@ export default function Index() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
-                  "Finally, a tool that actually works as advertised. Setup was
-                  smooth, support is excellent, and results speak for
-                  themselves."
+                  "The mobile app CipherBridge developed exceeded our
+                  expectations. Our customers love it and it's significantly
+                  boosted our engagement."
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-semibold">
@@ -361,9 +368,7 @@ export default function Index() {
                   </div>
                   <div className="ml-3">
                     <p className="font-semibold text-gray-900">Emily Chen</p>
-                    <p className="text-sm text-gray-600">
-                      Director IT, MegaCorp
-                    </p>
+                    <p className="text-sm text-gray-600">CTO, RetailPlus</p>
                   </div>
                 </div>
               </CardContent>
@@ -500,12 +505,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Built by automation experts
+              Built by development experts
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Founded in 2020 by former enterprise software leaders, FlowSync
-              was born from the frustration of watching teams waste countless
-              hours on manual tasks that should be automated.
+              CipherBridge was founded by experienced software architects and
+              developers who understand the unique challenges businesses face
+              when implementing custom digital solutions.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -514,44 +519,44 @@ export default function Index() {
                 Our Mission
               </h3>
               <p className="text-gray-600 mb-6">
-                We believe every business deserves access to enterprise-level
-                automation, regardless of size or technical expertise. Our
-                mission is to democratize workflow automation and help teams
-                focus on what matters most: growing their business.
+                We believe every business deserves custom software solutions
+                that perfectly fit their unique processes and requirements. Our
+                mission is to bridge the gap between complex business needs and
+                innovative technology solutions.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500" />
                   <span className="text-gray-900">
-                    50,000+ businesses trust FlowSync
+                    500+ custom solutions delivered
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500" />
                   <span className="text-gray-900">
-                    99.9% uptime SLA guarantee
+                    99.9% client satisfaction rate
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500" />
                   <span className="text-gray-900">
-                    $500M+ in productivity savings
+                    15+ years combined experience
                   </span>
                 </div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-6 bg-white rounded-lg">
-                <h4 className="text-3xl font-bold text-gray-900">50K+</h4>
-                <p className="text-gray-600">Active Users</p>
+                <h4 className="text-3xl font-bold text-gray-900">500+</h4>
+                <p className="text-gray-600">Projects Delivered</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg">
                 <h4 className="text-3xl font-bold text-gray-900">99.9%</h4>
-                <p className="text-gray-600">Uptime</p>
+                <p className="text-gray-600">Satisfaction Rate</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg">
-                <h4 className="text-3xl font-bold text-gray-900">200+</h4>
-                <p className="text-gray-600">Integrations</p>
+                <h4 className="text-3xl font-bold text-gray-900">50+</h4>
+                <p className="text-gray-600">Technologies</p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg">
                 <h4 className="text-3xl font-bold text-gray-900">24/7</h4>
@@ -567,48 +572,49 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Ready to transform your workflow?
+              Ready to transform your business?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join thousands of companies already saving time and money with
-              FlowSync. Start your free trial today or book a personalized demo.
+              Let's discuss your unique requirements and create a custom
+              solution that drives real results for your business.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <Card className="border-0 bg-gray-50">
               <CardHeader>
-                <CardTitle>Get Started Free</CardTitle>
+                <CardTitle>Get a Free Consultation</CardTitle>
                 <CardDescription>
-                  Try FlowSync for 14 days with full access to all features.
+                  Discuss your project requirements with our experts and get a
+                  detailed proposal.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Input placeholder="Work email address" type="email" />
                 <Input placeholder="Company name" />
                 <Button className="w-full gradient-primary text-white border-0 hover:opacity-90">
-                  Start Free Trial
+                  Get Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <p className="text-sm text-gray-600 text-center">
-                  No credit card required • Cancel anytime
+                  No commitment required • Free project assessment
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-0 bg-gray-50">
               <CardHeader>
-                <CardTitle>Book a Demo</CardTitle>
+                <CardTitle>Request a Quote</CardTitle>
                 <CardDescription>
-                  See FlowSync in action with a personalized demo tailored to
-                  your needs.
+                  Tell us about your project and we'll provide a detailed
+                  proposal with timeline and pricing.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Input placeholder="Full name" />
                 <Input placeholder="Work email" type="email" />
-                <Textarea placeholder="Tell us about your automation needs..." />
+                <Textarea placeholder="Describe your project requirements..." />
                 <Button className="w-full" variant="outline">
-                  Schedule Demo
+                  Request Quote
                 </Button>
               </CardContent>
             </Card>
@@ -625,10 +631,11 @@ export default function Index() {
                 <div className="h-8 w-8 gradient-primary rounded-lg flex items-center justify-center">
                   <Zap className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">FlowSync</span>
+                <span className="text-xl font-bold">CipherBridge</span>
               </div>
               <p className="text-gray-400 mb-6">
-                Streamline your business operations with intelligent automation.
+                Bridging the gap between business needs and innovative
+                technology solutions.
               </p>
               <div className="flex space-x-4">
                 <a
@@ -741,7 +748,7 @@ export default function Index() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 FlowSync. All rights reserved.
+              © 2024 CipherBridge. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">

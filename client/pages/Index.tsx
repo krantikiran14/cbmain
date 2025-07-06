@@ -93,6 +93,31 @@ export default function Index() {
     }
   };
 
+  const scrollToQuoteForm = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleWatchDemo = () => {
+    // For now, show a toast - you can replace with actual demo video
+    toast({
+      title: "Demo Coming Soon!",
+      description:
+        "We're preparing an interactive demo. Contact us for a live demonstration.",
+    });
+  };
+
+  const handleSignIn = () => {
+    // For now, show a toast - you can implement actual auth later
+    toast({
+      title: "Sign In",
+      description:
+        "Sign in functionality will be available soon. Contact us for account setup.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
@@ -132,10 +157,17 @@ export default function Index() {
             </a>
           </nav>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="hidden md:inline-flex">
+            <Button
+              variant="ghost"
+              className="hidden md:inline-flex"
+              onClick={handleSignIn}
+            >
               Sign In
             </Button>
-            <Button className="gradient-primary text-white border-0 hover:opacity-90">
+            <Button
+              className="gradient-primary text-white border-0 hover:opacity-90"
+              onClick={scrollToQuoteForm}
+            >
               Get Quote
             </Button>
           </div>
@@ -166,11 +198,17 @@ export default function Index() {
               <Button
                 size="lg"
                 className="gradient-primary text-white border-0 hover:opacity-90 px-8 py-3"
+                onClick={scrollToQuoteForm}
               >
                 Get Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-3">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-3"
+                onClick={handleWatchDemo}
+              >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
               </Button>

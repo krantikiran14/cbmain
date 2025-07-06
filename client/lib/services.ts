@@ -1,4 +1,4 @@
-import { supabase, type QuoteRequest } from "./supabase";
+import { supabase, isSupabaseConfigured, type QuoteRequest } from "./supabase";
 
 export interface SubmitQuoteData {
   fullName: string;
@@ -16,6 +16,16 @@ export class QuoteService {
     data: SubmitQuoteData,
   ): Promise<{ success: boolean; error?: string }> {
     try {
+      // Check if Supabase is configured
+      if (!isSupabaseConfigured()) {
+        // For development/demo purposes - simulate success
+        console.log("Supabase not configured. Quote data:", data);
+        return {
+          success: true,
+          error: "Demo mode: Supabase not configured. Quote logged to console.",
+        };
+      }
+
       // Validate required fields
       if (
         !data.fullName ||
@@ -46,7 +56,7 @@ export class QuoteService {
       };
 
       // Insert into Supabase
-      const { error } = await supabase
+      const { error } = await supabase!
         .from("quote_requests")
         .insert([quoteData]);
 
@@ -75,7 +85,15 @@ export class QuoteService {
     error: string | null;
   }> {
     try {
-      const { data, error } = await supabase
+      if (!isSupabaseConfigured()) {
+        return {
+          data: null,
+          error:
+            "Supabase not configured. Please set up environment variables.",
+        };
+      }
+
+      const { data, error } = await supabase!
         .from("quote_requests")
         .select("*")
         .order("created_at", { ascending: false });

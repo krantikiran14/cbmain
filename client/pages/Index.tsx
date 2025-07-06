@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,6 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import {
   CheckCircle,
   Zap,
@@ -22,9 +24,75 @@ import {
   Mail,
   Phone,
   MapPin,
+  Loader2,
 } from "lucide-react";
+import { QuoteService, type SubmitQuoteData } from "@/lib/services";
 
 export default function Index() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState<SubmitQuoteData>({
+    fullName: "",
+    companyName: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    budgetRange: "",
+    timeline: "",
+    requirements: "",
+  });
+
+  const handleInputChange = (field: keyof SubmitQuoteData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmitQuote = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const result = await QuoteService.submitQuote(formData);
+
+      if (result.success) {
+        toast({
+          title: "Quote Request Submitted!",
+          description:
+            "Thank you! Our team will contact you within 24 hours to discuss your project.",
+        });
+
+        // Reset form
+        setFormData({
+          fullName: "",
+          companyName: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          budgetRange: "",
+          timeline: "",
+          requirements: "",
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Submission Failed",
+          description:
+            result.error || "Please try again or contact us directly.",
+        });
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
@@ -383,98 +451,161 @@ export default function Index() {
                   24 hours
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <Input placeholder="Your full name" required />
+              <CardContent>
+                <form onSubmit={handleSubmitQuote} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name *
+                      </label>
+                      <Input
+                        placeholder="Your full name"
+                        value={formData.fullName}
+                        onChange={(e) =>
+                          handleInputChange("fullName", e.target.value)
+                        }
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Company Name
+                      </label>
+                      <Input
+                        placeholder="Your company name"
+                        value={formData.companyName}
+                        onChange={(e) =>
+                          handleInputChange("companyName", e.target.value)
+                        }
+                      />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <Input
+                        placeholder="your@email.com"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Phone Number *
+                      </label>
+                      <Input
+                        placeholder="+1 (555) 123-4567"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          handleInputChange("phone", e.target.value)
+                        }
+                        required
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Company Name
+                      Project Type *
                     </label>
-                    <Input placeholder="Your company name" />
+                    <select
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      value={formData.projectType}
+                      onChange={(e) =>
+                        handleInputChange("projectType", e.target.value)
+                      }
+                      required
+                    >
+                      <option value="">Select your project type</option>
+                      <option value="crm">Custom CRM Solution</option>
+                      <option value="erp">Enterprise ERP System</option>
+                      <option value="database">Database Management</option>
+                      <option value="website">Website Development</option>
+                      <option value="mobile">Mobile Application</option>
+                      <option value="multiple">Multiple Services</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
+                      Project Budget Range
                     </label>
-                    <Input placeholder="your@email.com" type="email" required />
+                    <select
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      value={formData.budgetRange}
+                      onChange={(e) =>
+                        handleInputChange("budgetRange", e.target.value)
+                      }
+                    >
+                      <option value="">Select budget range</option>
+                      <option value="5k-15k">$5,000 - $15,000</option>
+                      <option value="15k-50k">$15,000 - $50,000</option>
+                      <option value="50k-100k">$50,000 - $100,000</option>
+                      <option value="100k+">$100,000+</option>
+                      <option value="discuss">Prefer to discuss</option>
+                    </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
+                      Project Timeline
                     </label>
-                    <Input
-                      placeholder="+1 (555) 123-4567"
-                      type="tel"
+                    <select
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      value={formData.timeline}
+                      onChange={(e) =>
+                        handleInputChange("timeline", e.target.value)
+                      }
+                    >
+                      <option value="">Select timeline</option>
+                      <option value="asap">ASAP (Rush project)</option>
+                      <option value="1-3months">1-3 months</option>
+                      <option value="3-6months">3-6 months</option>
+                      <option value="6months+">6+ months</option>
+                      <option value="flexible">Flexible</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Project Requirements *
+                    </label>
+                    <Textarea
+                      placeholder="Please describe your project requirements, features needed, current challenges, and any specific goals you want to achieve..."
+                      className="min-h-32"
+                      value={formData.requirements}
+                      onChange={(e) =>
+                        handleInputChange("requirements", e.target.value)
+                      }
                       required
                     />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Type *
-                  </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Select your project type</option>
-                    <option value="crm">Custom CRM Solution</option>
-                    <option value="erp">Enterprise ERP System</option>
-                    <option value="database">Database Management</option>
-                    <option value="website">Website Development</option>
-                    <option value="mobile">Mobile Application</option>
-                    <option value="multiple">Multiple Services</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Budget Range
-                  </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Select budget range</option>
-                    <option value="5k-15k">$5,000 - $15,000</option>
-                    <option value="15k-50k">$15,000 - $50,000</option>
-                    <option value="50k-100k">$50,000 - $100,000</option>
-                    <option value="100k+">$100,000+</option>
-                    <option value="discuss">Prefer to discuss</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Timeline
-                  </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Select timeline</option>
-                    <option value="asap">ASAP (Rush project)</option>
-                    <option value="1-3months">1-3 months</option>
-                    <option value="3-6months">3-6 months</option>
-                    <option value="6months+">6+ months</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Requirements *
-                  </label>
-                  <Textarea
-                    placeholder="Please describe your project requirements, features needed, current challenges, and any specific goals you want to achieve..."
-                    className="min-h-32"
-                    required
-                  />
-                </div>
-                <Button className="w-full gradient-primary text-white border-0 hover:opacity-90 py-4 text-lg">
-                  Get My Custom Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <p className="text-sm text-gray-600 text-center">
-                  Our team will review your requirements and call you within 24
-                  hours • Free consultation • No commitment required
-                </p>
+                  <Button
+                    type="submit"
+                    className="w-full gradient-primary text-white border-0 hover:opacity-90 py-4 text-lg"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Get My Custom Quote
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                  <p className="text-sm text-gray-600 text-center">
+                    Our team will review your requirements and call you within
+                    24 hours • Free consultation • No commitment required
+                  </p>
+                </form>
               </CardContent>
             </Card>
           </div>
